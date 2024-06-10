@@ -6,10 +6,10 @@
           <app-movie [movie]="movie"/>
         }
       } -->
-        <div *ngIf="dataObs | async as popularMovies; else loading">
-          <ng-container *ngFor="let movie of popularMovies">
-            <app-movie [movie]="movie"></app-movie>
-          </ng-container>
+        <div *ngIf="dataObs | async as popularMovies; else loading" class="max-w-sm rounded overflow-hidden shadow-lg">
+          <div *ngFor="let movie of popularMovies">
+            <app-movie [movie]="movie"/>
+          </div>
         </div>
         <ng-template #loading>
           Loading stuff...
